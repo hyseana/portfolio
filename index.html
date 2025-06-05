@@ -1,126 +1,24 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ana Hysenaj | Developer </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        scroll-behavior: smooth;
-      }
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-      .fade-in.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      @media (max-width: 768px) {
-        #home h2 {
-          white-space: normal; /* Permette al testo di andare a capo */
-          font-size: 3.5rem; /* Puoi anche ridurre leggermente la dimensione del testo */
-          line-height: 1.2; /* Migliora la spaziatura tra le righe */
-        }
-        #home h2 span {
-          display: block; /* Forza "Ana Hysenaj" ad andare a capo */
-        }
-        #home p {
-          font-size: 1.1rem; /* Puoi anche ridurre leggermente la dimensione del sottotitolo */
-        }
-      }
 
-      @keyframes infinite-scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }      
-      }
-      
-      .animate-infinite-scroll {
-        display: flex;
-        width: max-content;
-        animation: infinite-scroll 20s linear infinite;
-      }
-      
-      .animate-infinite-scroll:hover {
-        animation-play-state: paused;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana Hysenaj | Developer </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      @media (max-width: 768px) {
-        #mobile-menu {
-          position: absolute;
-          top: 68px; /* Altezza dell'header */
-          left: 0;
-          width: 100%;
-          background-color: white;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          padding: 1rem;
-          flex-direction: column; /* Imposta gli elementi del menu in colonna */
-          align-items: flex-start; /* Allinea gli elementi a sinistra */
-        }
-
-        #mobile-menu nav {
-          flex-direction: column; /* Anche la nav interna in colonna */
-          align-items: flex-start;
-          width: 100%;
-        }
-
-        #mobile-menu nav a {
-          display: block; /* Ogni link occupa una riga intera */
-          padding: 0.75rem 1rem;
-          border-bottom: 1px solid #e5e7eb; /* Aggiunge un separatore tra i link */
-          width: 100%;
-        }
-
-        #mobile-menu nav a:last-child {
-          border-bottom: none; /* Rimuove il bordo dall'ultimo link */
-        }
-      }
-    </style>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-            }
-          });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuLinks = mobileMenu.querySelectorAll('a');
-        // Funzione per chiudere il menu
-        function closeMobileMenu() {
-          mobileMenu.classList.add('hidden');
-        }
-        mobileMenuButton.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-        });
-        // Aggiungi un event listener a ciascun link del menu
-        menuLinks.forEach(link => {
-          link.addEventListener('click', closeMobileMenu);
-        });
-        
-      });
-    </script>
-  </head>
-  <body class="bg-white text-gray-900">
-    <!-- Navbar -->
+<body class="bg-white text-gray-900">
+  <script src="script.js"></script>
+  <!-- Navbar -->
   <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur shadow-sm">
     <div class="w-full px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">Portfolio</h1>
       <button id="mobile-menu-button" class="md:hidden focus:outline-none">
         <svg class="w-6 h-6 fill-current text-gray-700" viewBox="0 0 24 24">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
         </svg>
       </button>
       <div id="mobile-menu" class="hidden md:flex md:items-center w-full md:w-auto">
@@ -135,318 +33,364 @@
   </header>
 
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-24">
-      <div class="max-w-full mx-auto grid md:grid-cols-2 items-center gap-10 fade-in">
-        
-        <!-- Testo a sinistra -->
-        <div class="text-left">
-          <h2 class="text-4xl sm:text-5xl font-bold mb-4">Ciao! Sono <span class="text-blue-600">Ana Hysenaj</span></h2>
-          <p class="text-xl text-gray-700 mb-8">Junior Developer</p>
-          <!-- <p class="text-gray-600 mb-8">Mi occupo di sviluppo web, AI generativa e game development. Sono appassionata di tecnologia e innovazione.</p>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-24">
+    <div class="max-w-full mx-auto grid md:grid-cols-2 items-center gap-10 fade-in">
+
+      <!-- Testo a sinistra -->
+      <div class="text-left">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-4">Ciao! Sono <span class="text-blue-600">Ana Hysenaj</span></h2>
+        <p class="text-xl text-gray-700 mb-8">Junior Developer</p>
+        <!-- <p class="text-gray-600 mb-8">Mi occupo di sviluppo web, AI generativa e game development. Sono appassionata di tecnologia e innovazione.</p>
           <p class="text-gray-600 mb-8">In questo portfolio puoi trovare alcuni dei miei progetti e competenze.</p> -->
-          <div class="flex gap-4">
-            <a href="./doc/Ana Hysenaj CV.pdf" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow hover:bg-blue-700 transition">Scarica CV</a>
-            <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition">Guarda i progetti</a>
-          </div>
+        <div class="flex gap-4">
+          <a href="./doc/Ana Hysenaj CV.pdf"
+            class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow hover:bg-blue-700 transition">Scarica
+            CV</a>
+          <a href="#projects"
+            class="px-6 py-3 border border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition">Guarda
+            i progetti</a>
         </div>
-
-        <!-- Immagine a destra -->
-        <div class="flex justify-center md:justify-end">
-          <img src="./img/ana.jpg" alt="Foto di Ana" class="rounded-2xl shadow-lg w-[900px] h-[1100px] object-cover">
-        </div>
-
       </div>
-    </section>
+
+      <!-- Immagine a destra -->
+      <div class="flex justify-center md:justify-end">
+        <img src="./img/ana.jpg" alt="Foto di Ana" class="rounded-2xl shadow-lg w-[900px] h-[1100px] object-cover">
+      </div>
+
+    </div>
+  </section>
 
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-28 px-6 bg-gray-50">
-      <div class="max-w-6xl mx-auto fade-in">
-        <h3 class="text-3xl font-bold mb-12 text-center">Progetti</h3>
-        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <img src="./img/pongGame.png" alt="Progetto 1" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h4 class="text-xl font-semibold mb-2">Pong Game – Mini gioco realizzato con Unity</h4>
-              <p class="text-gray-600 text-sm">🛠  Tecnologie usate: Unity, C#</p>
-              <p class="text-gray-600 text-sm">💡 Cosa ho imparato: gestione eventi in C#, ottimizzazione dei frame rate, collisioni 2D</p>
-              <p class="text-gray-600 text-sm">🎯 Sfida principale: bilanciare la difficoltà rendendo il gioco accessibile ma competitivo</p>
-            </div>
+  <!-- Projects Section -->
+  <section id="projects" class="py-28 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto fade-in">
+      <h3 class="text-3xl font-bold mb-12 text-center">Progetti</h3>
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
+          <img src="./img/pongGame.png" alt="Progetto 1" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Pong Game – Mini gioco realizzato con Unity</h4>
+            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: Unity, C#</p>
+            <p class="text-gray-600 text-sm">💡 Cosa ho imparato: gestione eventi in C#, ottimizzazione dei frame rate,
+              collisioni 2D</p>
+            <p class="text-gray-600 text-sm">🎯 Sfida principale: bilanciare la difficoltà rendendo il gioco accessibile
+              ma competitivo</p>
           </div>
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="flex space-x-2 px-2 pt-2">
+        </div>
+        <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
+          <div class="flex space-x-2 px-2 pt-2">
             <img src="./img/wavegram1.png" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
             <img src="./img/wavegramGif.gif" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
             <img src="./img/wavegram2.png" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
-            </div>
-            <div class="p-6">
-              <h4 class="text-xl font-semibold mb-2">Wavegram - Social app</h4>
-              <p class="text-gray-600 text-sm">🛠  Tecnologie usate: PHP, JavaScript, CSS</p>
-              <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: gestione pagina di Login e Registrazione, carosello post</p>
-            </div>
           </div>
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <div class="flex space-x-2 px-2 pt-2">
-              <img src="./img/marketLogo.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
-              <img src="./img/marketMic.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
-              <img src="./img/marketTable.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
-              </div>
-            <div class="p-6">
-              <h4 class="text-xl font-semibold mb-2">Market Assistant - Chabot</h4>
-              <p class="text-gray-600 text-sm">🛠  Tecnologie usate: Python, JavaScript, HTML, CSS</p>
-              <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: Agenti</p>
-            </div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Wavegram - Social app</h4>
+            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: PHP, JavaScript, CSS</p>
+            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: gestione pagina di Login e Registrazione, carosello
+              post</p>
+          </div>
+        </div>
+        <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
+          <div class="flex space-x-2 px-2 pt-2">
+            <img src="./img/marketLogo.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
+            <img src="./img/marketMic.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
+            <img src="./img/marketTable.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-semibold mb-2">Market Assistant - Chabot</h4>
+            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: Python, JavaScript, HTML, CSS</p>
+            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: Agenti</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 bg-white">
-      <div class="max-w-7xl mx-auto fade-in">
-        <h3 class="text-3xl font-bold mb-12 text-center">Competenze</h3>
-        
-        <div class="relative overflow-hidden">
-          <!-- Container animato doppio per loop infinito -->
-          <div class="mb-4 flex animate-infinite-scroll">
-            <!-- Sezione duplicata per animazione continua -->
-            <div class="flex gap-4">
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 px-6 bg-white">
+    <div class="max-w-7xl mx-auto fade-in">
+      <h3 class="text-3xl font-bold mb-12 text-center">Competenze</h3>
 
-              <!-- Card (x2 per animazione) -->
-              <!-- INIZIO CARD BLOCK -->
-              <!-- === Web Development === -->
-              <div class=" flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Struttura semantica</li>
-                  <li>SEO e accessibilità</li>
-                </ul>
-              </div>
+      <div class="relative overflow-hidden">
+        <!-- Container animato doppio per loop infinito -->
+        <div class="mb-4 flex animate-infinite-scroll">
+          <!-- Sezione duplicata per animazione continua -->
+          <div class="flex gap-4">
 
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Responsive design</li>
-                  <li>Animazioni con Tailwind</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>DOM manipulation</li>
-                  <li>Gestione eventi & API</li>
-                </ul>
-              </div>
-
-              <!-- === AI & Generative === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Workflow visuali per generazione immagini</li>
-                  <li>Ottimizzazione prompt e nodi</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Prompting efficace (immagini e testo)</li>
-                  <li>Uso creativo di modelli open-source</li>
-                </ul>
-              </div>
-
-              <!-- === Back-End / Data === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Automazioni e script</li>
-                  <li>Librerie scientifiche</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Query, JOIN e normalizzazione</li>
-                  <li>Modellazione dati</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Applicazioni desktop</li>
-                  <li>Esperienza con Unity</li>
-                </ul>
-              </div>
-
-              <!-- === Game Development === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Logica visuale per gameplay</li>
-                  <li>Trigger, eventi e animazioni 3D</li>
-                </ul>
-              </div>
-
-
-              <!-- DUPLICATO per effetto scroll continuo -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Struttura semantica</li>
-                  <li>SEO e accessibilità</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Responsive design</li>
-                  <li>Animazioni con Tailwind</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>DOM manipulation</li>
-                  <li>Gestione eventi & API</li>
-                </ul>
-              </div>
-
-              <!-- === AI & Generative === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Workflow visuali per generazione immagini</li>
-                  <li>Ottimizzazione prompt e nodi</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Prompting efficace (immagini e testo)</li>
-                  <li>Uso creativo di modelli open-source</li>
-                </ul>
-              </div>
-
-              <!-- === Back-End / Data === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Automazioni e script</li>
-                  <li>Librerie scientifiche</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Query, JOIN e normalizzazione</li>
-                  <li>Modellazione dati</li>
-                </ul>
-              </div>
-
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Applicazioni desktop</li>
-                  <li>Esperienza con Unity</li>
-                </ul>
-              </div>
-
-              <!-- === Game Development === -->
-              <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-                <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
-                <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
-                <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                  <li>Logica visuale per gameplay</li>
-                  <li>Trigger, eventi e animazioni 3D</li>
-                </ul>
-              </div>
-              <!-- FINE CARD BLOCK -->
-
+            <!-- Card (x2 per animazione) -->
+            <!-- INIZIO CARD BLOCK -->
+            <!-- === Web Development === -->
+            <div
+              class=" flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Struttura semantica</li>
+                <li>SEO e accessibilità</li>
+              </ul>
             </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Responsive design</li>
+                <li>Animazioni con Tailwind</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>DOM manipulation</li>
+                <li>Gestione eventi & API</li>
+              </ul>
+            </div>
+
+            <!-- === AI & Generative === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Workflow visuali per generazione immagini</li>
+                <li>Ottimizzazione prompt e nodi</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Prompting efficace (immagini e testo)</li>
+                <li>Uso creativo di modelli open-source</li>
+              </ul>
+            </div>
+
+            <!-- === Back-End / Data === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Automazioni e script</li>
+                <li>Librerie scientifiche</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Query, JOIN e normalizzazione</li>
+                <li>Modellazione dati</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Applicazioni desktop</li>
+                <li>Esperienza con Unity</li>
+              </ul>
+            </div>
+
+            <!-- === Game Development === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Logica visuale per gameplay</li>
+                <li>Trigger, eventi e animazioni 3D</li>
+              </ul>
+            </div>
+
+
+            <!-- DUPLICATO per effetto scroll continuo -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Struttura semantica</li>
+                <li>SEO e accessibilità</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Responsive design</li>
+                <li>Animazioni con Tailwind</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>DOM manipulation</li>
+                <li>Gestione eventi & API</li>
+              </ul>
+            </div>
+
+            <!-- === AI & Generative === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Workflow visuali per generazione immagini</li>
+                <li>Ottimizzazione prompt e nodi</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Prompting efficace (immagini e testo)</li>
+                <li>Uso creativo di modelli open-source</li>
+              </ul>
+            </div>
+
+            <!-- === Back-End / Data === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Automazioni e script</li>
+                <li>Librerie scientifiche</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Query, JOIN e normalizzazione</li>
+                <li>Modellazione dati</li>
+              </ul>
+            </div>
+
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Applicazioni desktop</li>
+                <li>Esperienza con Unity</li>
+              </ul>
+            </div>
+
+            <!-- === Game Development === -->
+            <div
+              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Logica visuale per gameplay</li>
+                <li>Trigger, eventi e animazioni 3D</li>
+              </ul>
+            </div>
+            <!-- FINE CARD BLOCK -->
+
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-    <!-- Education Section -->
-    <section id="education" class="py-28 px-6 bg-gray-50">
-      <div class="max-w-6xl mx-auto fade-in">
-        <h3 class="text-3xl font-bold mb-12 text-center">Formazione</h3>
-        <div class="space-y-8">
-          <div class="bg-white rounded-2xl shadow-lg p-8">
-            <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Scuola Superiore</h4>
-            <p class="text-gray-700 text-center">
-              Presso l’Istituto Tecnico “Marco Fanno” di Conegliano ho conseguito il diploma in Servizi Informativi Aziendali, un percorso che mi ha permesso di sviluppare competenze solide in informatica, economia aziendale e gestione dei sistemi informativi.
-              Questa formazione ha rappresentato una base concreta per avvicinarmi al mondo della programmazione e della tecnologia, alimentando la mia passione per le soluzioni digitali e l’innovazione.
-            </p>
-          </div>
-          <div class="bg-white rounded-2xl shadow-lg p-8">
-            <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Master in Coding</h4>
-            <p class="text-gray-700 text-center">
-              Presso BigRock ho frequentato il Master in Coding, un percorso intensivo focalizzato sullo sviluppo di software, videogiochi e applicazioni interattive.
-              Durante il corso ho lavorando con tecnologie come Unity, Unreal Engine, VR, Deep Learning e intelligenza artificiale generativa.
-              Ho acquisito esperienza pratica nella creazione di applicazioni, chatbot intelligenti e soluzioni basate sull’intelligenza artificiale.
-              Questa esperienza immersiva mi ha permesso di trasformare le competenze tecniche in progetti concreti, lavorando in team e affrontando sfide in modo professionale.
-            </p>
-          </div>
+  <!-- Education Section -->
+  <section id="education" class="py-28 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto fade-in">
+      <h3 class="text-3xl font-bold mb-12 text-center">Formazione</h3>
+      <div class="space-y-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Scuola Superiore</h4>
+          <p class="text-gray-700 text-center">
+            Presso l’Istituto Tecnico “Marco Fanno” di Conegliano ho conseguito il diploma in Servizi Informativi
+            Aziendali, un percorso che mi ha permesso di sviluppare competenze solide in informatica, economia aziendale
+            e gestione dei sistemi informativi.
+            Questa formazione ha rappresentato una base concreta per avvicinarmi al mondo della programmazione e della
+            tecnologia, alimentando la mia passione per le soluzioni digitali e l’innovazione.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Master in Coding</h4>
+          <p class="text-gray-700 text-center">
+            Presso BigRock ho frequentato il Master in Coding, un percorso intensivo focalizzato sullo sviluppo di
+            software, videogiochi e applicazioni interattive.
+            Durante il corso ho lavorando con tecnologie come Unity, Unreal Engine, VR, Deep Learning e intelligenza
+            artificiale generativa.
+            Ho acquisito esperienza pratica nella creazione di applicazioni, chatbot intelligenti e soluzioni basate
+            sull’intelligenza artificiale.
+            Questa esperienza immersiva mi ha permesso di trasformare le competenze tecniche in progetti concreti,
+            lavorando in team e affrontando sfide in modo professionale.
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-28 px-6">
-      <div class="max-w-3xl mx-auto text-center fade-in">
-        <h3 class="text-3xl font-bold mb-6">Contattami</h3>
-        <p class="text-gray-700 mb-8">Hai un'idea o un progetto? Scrivimi pure!</p>
-        <a href="contatti.html" class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">Scrivimi</a>
-        <div class="mt-8 flex justify-center gap-2">
-          <a href="https://www.linkedin.com/in/ana-hysenaj" target="_blank" class="text-black hover:text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 0-2.155 1.459-2.155 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.559 2.841-1.559 3.037 0 3.6 2 3.6 4.604v5.588z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/anaahysenaj/" target="_blank" class="text-black hover:text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="40 40 444 444" fill="currentColor">
-              <path d="M349.33 69.33H162.67C110.8 69.33 69.33 110.8 69.33 162.67v186.66c0 51.87 41.47 93.34 93.34 93.34h186.66c51.87 0 93.34-41.47 93.34-93.34V162.67c0-51.87-41.47-93.34-93.34-93.34zM464 349.33c0 63.47-51.2 114.67-114.67 114.67H162.67C99.2 464 48 412.8 48 349.33V162.67C48 99.2 99.2 48 162.67 48h186.66C412.8 48 464 99.2 464 162.67v186.66z"/>
-              <path d="M377.33 162.67A25.33 25.33 0 1 1 352 137.33a25.35 25.35 0 0 1 25.33 25.34zM256 170.67a85.33 85.33 0 1 0 85.33 85.33A85.37 85.37 0 0 0 256 170.67zm0 138.66a53.33 53.33 0 1 1 53.33-53.33 53.38 53.38 0 0 1-53.33 53.33z"/>
-            </svg>
-          </a>
-          
-          
-        </div>
+  <!-- Contact Section -->
+  <section id="contact" class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h3 class="text-3xl font-bold mb-6">Contattami</h3>
+      <p class="text-gray-700 mb-8">Hai un'idea o un progetto? Scrivimi pure!</p>
+      <a href="contatti.html"
+        class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">Scrivimi</a>
+      <div class="mt-8 flex justify-center gap-2">
+        <a href="https://www.linkedin.com/in/ana-hysenaj" target="_blank" class="text-black hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 0-2.155 1.459-2.155 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.559 2.841-1.559 3.037 0 3.6 2 3.6 4.604v5.588z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/anaahysenaj/" target="_blank" class="text-black hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="40 40 444 444" fill="currentColor">
+            <path
+              d="M349.33 69.33H162.67C110.8 69.33 69.33 110.8 69.33 162.67v186.66c0 51.87 41.47 93.34 93.34 93.34h186.66c51.87 0 93.34-41.47 93.34-93.34V162.67c0-51.87-41.47-93.34-93.34-93.34zM464 349.33c0 63.47-51.2 114.67-114.67 114.67H162.67C99.2 464 48 412.8 48 349.33V162.67C48 99.2 99.2 48 162.67 48h186.66C412.8 48 464 99.2 464 162.67v186.66z" />
+            <path
+              d="M377.33 162.67A25.33 25.33 0 1 1 352 137.33a25.35 25.35 0 0 1 25.33 25.34zM256 170.67a85.33 85.33 0 1 0 85.33 85.33A85.37 85.37 0 0 0 256 170.67zm0 138.66a53.33 53.33 0 1 1 53.33-53.33 53.38 53.38 0 0 1-53.33 53.33z" />
+          </svg>
+        </a>
+
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
-      &copy; 2025 Ana Hysenaj. Tutti i diritti riservati.
-    </footer>
-  </body>
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
+    &copy; 2025 Ana Hysenaj. Tutti i diritti riservati.
+  </footer>
+
+  <!-- Popup Modal -->
+  <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-4 relative overflow-y-auto">
+      <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+      <div id="modal-content">
+        <!-- Qui verrà inserito il contenuto della card -->
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
-
