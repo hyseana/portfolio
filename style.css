@@ -33,29 +33,7 @@ body {
         font-size: 1.1rem;
         /* Puoi anche ridurre leggermente la dimensione del sottotitolo */
     }
-}
 
-@keyframes infinite-scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.animate-infinite-scroll {
-    display: flex;
-    width: max-content;
-    animation: infinite-scroll 20s linear infinite;
-}
-
-.animate-infinite-scroll:hover {
-    animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
     #mobile-menu {
         position: absolute;
         top: 68px;
@@ -93,10 +71,29 @@ body {
     }
 }
 
+@keyframes infinite-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-infinite-scroll {
+    display: flex;
+    width: max-content;
+    animation: infinite-scroll 20s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+    animation-play-state: paused;
+}
+
 #project-modal img {
-  width: 100%;
-  height: 192px;      /* più alto di h-48 (192px) */
-  object-fit: cover;
-  border-radius: 1rem;
-  display: block;
+  object-fit: contain !important; /* Mostra l'immagine intera senza tagliarla */
+  height: auto !important; /* Rimuove l'altezza fissa h-48 per le immagini nel popup */
+  max-height: 50vh; /* Limita l'altezza per non occupare tutto lo schermo */
+  border-radius: 0.5rem;
 }

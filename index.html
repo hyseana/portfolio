@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio di Ana Hysenaj, Junior Developer & AI Specialist. Sviluppo soluzioni software integrate con l'Intelligenza Artificiale." />
+  <meta property="og:title" content="Ana Hysenaj | Developer & AI Specialist" />
+  <meta property="og:description" content="Costruisco ponti tra il Software Tradizionale e l'Intelligenza Artificiale." />
+  <meta property="og:type" content="website" />
   <title>Ana Hysenaj | Developer </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,7 +20,7 @@
   <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur shadow-sm">
     <div class="w-full px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">Portfolio</h1>
-      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Apri menu di navigazione">
         <svg class="w-6 h-6 fill-current text-gray-700" viewBox="0 0 24 24">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
         </svg>
@@ -24,8 +28,10 @@
       <div id="mobile-menu" class="hidden md:flex md:items-center w-full md:w-auto">
         <nav class="space-x-6">
           <a href="#home" class="hover:text-blue-600">Home</a>
+          <a href="#about" class="hover:text-blue-600">Chi sono</a>
           <a href="#projects" class="hover:text-blue-600">Progetti</a>
           <a href="#skills" class="hover:text-blue-600">Competenze</a>
+          <a href="#experience" class="hover:text-blue-600">Esperienza</a>
           <a href="#contact" class="hover:text-blue-600">Contatti</a>
         </nav>
       </div>
@@ -40,7 +46,11 @@
       <!-- Testo a sinistra -->
       <div class="text-left">
         <h2 class="text-4xl sm:text-5xl font-bold mb-4">Ciao! Sono <span class="text-blue-600">Ana Hysenaj</span></h2>
-        <p class="text-xl text-gray-700 mb-8">Junior Developer</p>
+        <p class="text-xl text-blue-600 font-semibold mb-2">Junior Developer & AI Specialist</p>
+        <p class="text-2xl font-semibold text-gray-800 mb-4">Costruisco ponti tra il Software Tradizionale e l'Intelligenza Artificiale.</p>
+        <p class="text-lg text-gray-600 mb-8">
+          Sviluppo soluzioni dove il codice incontra l'AI per risolvere problemi reali e automatizzare i processi aziendali.
+        </p>
         <!-- <p class="text-gray-600 mb-8">Mi occupo di sviluppo web, AI generativa e game development. Sono appassionata di tecnologia e innovazione.</p>
           <p class="text-gray-600 mb-8">In questo portfolio puoi trovare alcuni dei miei progetti e competenze.</p> -->
         <div class="flex gap-4">
@@ -55,9 +65,22 @@
 
       <!-- Immagine a destra -->
       <div class="flex justify-center md:justify-end">
-        <img src="./img/ana.jpg" alt="Foto di Ana" class="rounded-2xl shadow-lg w-[900px] h-[1100px] object-cover">
+        <img src="./img/ana.jpg" alt="Foto di Ana" class="rounded-2xl shadow-lg w-[700px] h-[800px] object-cover">
       </div>
 
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto fade-in">
+      <h3 class="text-3xl font-bold mb-8 text-center">Chi sono</h3>
+      <p class="text-lg text-gray-700 leading-relaxed text-center">
+        Sono una Junior Developer & AI Explorer che non si accontenta di scrivere codice, ma cerca di capire come la tecnologia possa risolvere colli di bottiglia reali.
+        Il mio percorso è iniziato con il coding tradizionale, ma si è evoluto rapidamente verso l'Intelligenza Artificiale Generativa e l'Automazione.
+        Non credo nell'AI come bacchetta magica, ma come uno strumento potente che, se integrato correttamente (tramite architetture RAG, agenti e workflow su n8n), può trasformare il modo in cui lavoriamo.<br>
+        Oltre alla parte tecnica, porto con me un'esperienza nel mondo amministrativo che mi ha insegnato il valore della precisione e l'importanza di creare soluzioni che siano utilizzabili anche da chi non è un programmatore.
+      </p>
     </div>
   </section>
 
@@ -69,82 +92,86 @@
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
-          <img src="./img/pongGame.png" alt="Progetto 1" class="w-full h-48 object-cover">
+          <img src="./img/pongGame.png" alt="Schermata del progetto Pong Game" class="w-full h-48 object-cover" loading="lazy">
           <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Pong Game – Mini gioco realizzato con Unity</h4>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: Unity, C#</p>
-            <p class="text-gray-600 text-sm">💡 Cosa ho imparato: gestione eventi in C#, ottimizzazione dei frame rate,
-              collisioni 2D</p>
-            <p class="text-gray-600 text-sm">🎯 Sfida principale: bilanciare la difficoltà rendendo il gioco accessibile
-              ma competitivo</p>
+            <h4 class="text-xl font-semibold mb-2">Pong Game – Mini gioco in Unity</h4>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> Unity, C#</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Progetto:</strong> Sviluppo di una rivisitazione del classico gioco arcade, progettato per apprendere le basi dello sviluppo videoludico. Il gioco include un sistema di punteggio e una logica avversaria di base.</p>
+            <p class="text-gray-600 text-sm mb-3">💡 <strong>Cosa ho imparato:</strong> Gestione degli eventi in C#, fisica di base, ottimizzazione dei frame rate e gestione precisa delle collisioni 2D.</p>
+            <p class="text-gray-600 text-sm">🎯 <strong>Sfida principale:</strong> Creare una curva di difficoltà equilibrata, regolando la velocità e i tempi di reazione dell'avversario per rendere il gioco competitivo ma accessibile.</p>
           </div>
         </div>
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
           <div class="flex space-x-2 px-2 pt-2">
-            <img src="./img/wavegram1.png" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
-            <img src="./img/wavegramGif.gif" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
-            <img src="./img/wavegram2.png" alt="Progetto 2" class="h-48 w-1/3 object-cover rounded-md">
+            <img src="./img/wavegram1.png" alt="Screenshot di Wavegram" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
+            <img src="./img/wavegramGif.gif" alt="Animazione di Wavegram" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
+            <img src="./img/wavegram2.png" alt="Dettaglio di Wavegram" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
           </div>
           <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Wavegram - Social app</h4>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: PHP, JavaScript, CSS</p>
-            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: gestione pagina di Login e Registrazione, carosello
-              post</p>
+            <h4 class="text-xl font-semibold mb-2">Wavegram - Social App</h4>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> PHP, JavaScript, HTML, CSS</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Progetto:</strong> Una piattaforma social interattiva ispirata ai moderni network, che permette agli utenti di registrarsi, effettuare il login e visualizzare un feed di contenuti.</p>
+            <p class="text-gray-600 text-sm">💡 <strong>Il mio contributo:</strong> Mi sono occupata dello sviluppo completo del sistema di autenticazione sicuro (Login e Registrazione) e dell'implementazione front-end di un carosello dinamico per la navigazione dei post.</p>
           </div>
         </div>
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
           <div class="flex space-x-2 px-2 pt-2">
-            <img src="./img/marketLogo.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
-            <img src="./img/marketMic.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
-            <img src="./img/marketTable.jpg" alt="Progetto 3" class="h-48 w-1/3 object-cover rounded-md">
+            <img src="./img/marketLogo.jpg" alt="Logo Market Assistant" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
+            <img src="./img/marketMic.jpg" alt="Interfaccia vocale Market Assistant" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
+            <img src="./img/marketTable.jpg" alt="Dati Market Assistant" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
           </div>
           <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Market Assistant - Chabot</h4>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: Python, JavaScript, HTML, CSS</p>
-            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: Agenti</p>
+            <h4 class="text-xl font-semibold mb-2">Market Assistant - AI Chatbot</h4>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> Python, JavaScript, HTML, CSS, AI Agents</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Progetto:</strong> Un assistente virtuale intelligente pensato per supportare gli utenti in un ecosistema e-commerce, rispondendo a domande su prodotti e assistenza clienti.</p>
+            <p class="text-gray-600 text-sm">💡 <strong>Il mio contributo:</strong> Progettazione e integrazione di Agenti AI in Python per comprendere l'intento dell'utente e recuperare in autonomia le informazioni necessarie per simulare un vero customer care.</p>
           </div>
         </div>
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
           <div class="flex space-x-2 px-2 pt-2">
-            <img src="./img/ASTROCANE.jpg" alt="Progetto 4" class="w-full h-48 object-cover">
+            <img src="./img/ASTROCANE.jpg" alt="Copertina del corto Astrocane" class="w-full h-48 object-cover" loading="lazy">
           </div>
           <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Astrocane - Corto Animato AI </h4>
-            <p class="text-gray-600 text-sm">
+            <h4 class="text-xl font-semibold mb-2">Astrocane - Corto Animato AI</h4>
+            <p class="text-gray-600 text-sm mb-3">
               <a href="https://www.youtube.com/watch?v=aaTYhmaxAS0" target="_blank"
                 class="underline text-blue-600 hover:text-blue-800">
                 Trailer ufficiale su YouTube
               </a>
             </p>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: ComfyUI </p>
-            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: Diretto il team e tenuto organizzata la board di
-              lavoro, generazioni con utlizzo di AI generativa</p>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> ComfyUI, Generative AI Models</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Progetto:</strong> Un progetto sperimentale di storytelling visivo: un cortometraggio animato realizzato sfruttando le più recenti tecnologie di generazione immagini e video guidata dall'IA.</p>
+            <p class="text-gray-600 text-sm">💡 <strong>Il mio ruolo:</strong> Project Manager. Ho diretto il team e coordinato i flussi di lavoro tramite una board organizzativa. Operativamente, ho curato in prima persona la generazione degli asset visivi tramite complessi workflow su ComfyUI.</p>
           </div>
         </div>
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
           <div class="flex space-x-2 px-2 pt-2">
-            <img src="./img/smartEmail1.png" alt="Progetto 5" class="h-48 w-1/3 object-cover rounded-md">
-            <img src="./img/smartEmail2.png" alt="Progetto 5" class="h-48 w-2/3 object-cover rounded-md">
+            <img src="./img/smartEmail1.png" alt="Smart Email Generator Schermata 1" class="h-48 w-1/3 object-cover rounded-md" loading="lazy">
+            <img src="./img/smartEmail2.png" alt="Smart Email Generator Schermata 2" class="h-48 w-2/3 object-cover rounded-md" loading="lazy">
           </div>
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">Smart Email Generator</h4>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate:React, Tailwind CSS, Node.js, Express, Ollama 3 </p>
-            <p class="text-gray-600 text-sm">🎯 Sfida principale: Progetto realizzato con l'utilizzo di Agenti AI per studiare le tecnologie applicate </p>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> React, Tailwind CSS, Node.js, Express, Ollama 3</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Progetto:</strong> Un'applicazione web full-stack in grado di redigere automaticamente email professionali partendo da brevi input dell'utente.</p>
+            <p class="text-gray-600 text-sm">🎯 <strong>Sfida principale:</strong> Implementare modelli AI locali (Ollama 3) per garantire la privacy dei dati. L'obiettivo era esplorare le architetture ad agenti in JavaScript per generare risposte che rispettassero un tono aziendale adeguato.</p>
           </div>
         </div>
         <div
           class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 cursor-pointer">
           <div class="flex space-x-2 px-2 pt-2">
-            <img src="./img/x.jpg" alt="Progetto 5" class="w-full h-48 object-cover">
+            <div class="w-full h-48 bg-gradient-to-br from-blue-600 to-purple-700 rounded-md flex items-center justify-center text-white font-bold text-xl px-4 text-center">
+              AI Testing Dashboard
+            </div>
           </div>
           <div class="p-6">
-            <h4 class="text-xl font-semibold mb-2">Coming soon</h4>
-            <p class="text-gray-600 text-sm">🛠 Tecnologie usate: </p>
-            <p class="text-gray-600 text-sm">💡 A cosa ho lavorato: </p>
+            <h4 class="text-xl font-semibold mb-2">AI Testing Agent & Dashboard</h4>
+            <p class="text-gray-600 text-sm mb-3">🛠 <strong>Tech Stack:</strong> C# / .NET, AI Agents Logic, Playwright/Custom Automation, n8n</p>
+            <p class="text-gray-600 text-sm mb-3"><strong>Il Problema:</strong> Automatizzare il collaudo di "Atlante", un complesso gestionale sanitario, rendendo il processo accessibile anche al personale non tecnico dell'Help Desk, superando i limiti di velocità e usabilità dei framework standard.</p>
+            <p class="text-gray-600 text-sm"><strong>La Soluzione:</strong> Sviluppo di un tool proprietario basato su Agenti AI e logiche di testing via codice. Ho progettato una dashboard intuitiva che permette di selezionare i componenti da testare, monitorare l'avanzamento tramite un terminale di log integrato e gestire credenziali multiple per diverse installazioni clienti.</p>
           </div>
         </div>
       </div>
@@ -162,197 +189,120 @@
           <!-- Sezione duplicata per animazione continua -->
           <div class="flex gap-4">
 
-            <!-- Card (x2 per animazione) -->
-            <!-- INIZIO CARD BLOCK -->
-            <!-- === Web Development === -->
-            <div
-              class=" flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
+            <!-- SET 1 (Originale) -->
+            <!-- === Full Stack Web === -->
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Full Stack Web</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Frontend</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Struttura semantica</li>
-                <li>SEO e accessibilità</li>
+                <li>Angular & TypeScript</li>
+                <li>JavaScript (ES6+)</li>
+                <li>HTML/CSS</li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Full Stack Web</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Backend</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>C# & .NET</li>
+                <li>Node.js</li>
+                <li>Java</li>
+              </ul>
+            </div>
+            <!-- === AI & Automation === -->
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Automation</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Logic & Agents</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Sviluppo Agenti AI</li>
+                <li>Architetture RAG</li>
+                <li>Automazione con n8n</li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Automation</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Generative Models</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>LLM locali (Ollama)</li>
+                <li>Workflow su ComfyUI</li>
+                <li>Prompt Engineering</li>
+              </ul>
+            </div>
+            <!-- === Data & Tools === -->
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Data & Scripting</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python & SQL</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Automazioni e Scripting</li>
+                <li>Gestione e Query DB</li>
+                <li>Analisi dati</li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Testing & Tools</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">QA & DevOps</h4>
+              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+                <li>Automazione UI con Playwright</li>
+                <li>Version Control (GitHub)</li>
+                <li>VS Code</li>
               </ul>
             </div>
 
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
+            <!-- SET 2 (Duplicato per animazione continua) -->
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Full Stack Web</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Frontend</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Responsive design</li>
-                <li>Animazioni con Tailwind</li>
+                <li>Angular & TypeScript</li>
+                <li>JavaScript (ES6+)</li>
+                <li>HTML/CSS</li>
               </ul>
             </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Full Stack Web</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Backend</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>DOM manipulation</li>
-                <li>Gestione eventi & API</li>
+                <li>C# & .NET</li>
+                <li>Node.js</li>
+                <li>Java</li>
               </ul>
             </div>
-
-            <!-- === AI & Generative === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Automation</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Logic & Agents</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Workflow visuali per generazione immagini</li>
-                <li>Ottimizzazione prompt e nodi</li>
+                <li>Sviluppo Agenti AI</li>
+                <li>Architetture RAG</li>
+                <li>Automazione con n8n</li>
               </ul>
             </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Automation</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Generative Models</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Prompting efficace (immagini e testo)</li>
-                <li>Uso creativo di modelli open-source</li>
+                <li>LLM locali (Ollama)</li>
+                <li>Workflow su ComfyUI</li>
+                <li>Prompt Engineering</li>
               </ul>
             </div>
-
-            <!-- === Back-End / Data === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Data & Scripting</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python & SQL</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Automazioni e script</li>
-                <li>Librerie scientifiche</li>
+                <li>Automazioni e Scripting</li>
+                <li>Gestione e Query DB</li>
+                <li>Analisi dati</li>
               </ul>
             </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
+            <div class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
+              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Testing & Tools</span>
+              <h4 class="text-xl font-semibold mb-4 text-gray-800">QA & DevOps</h4>
               <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Query, JOIN e normalizzazione</li>
-                <li>Modellazione dati</li>
+                <li>Automazione UI con Playwright</li>
+                <li>Version Control (GitHub)</li>
+                <li>VS Code</li>
               </ul>
             </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Applicazioni desktop</li>
-                <li>Esperienza con Unity</li>
-              </ul>
-            </div>
-
-            <!-- === Game Development === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Logica visuale per gameplay</li>
-                <li>Trigger, eventi e animazioni 3D</li>
-              </ul>
-            </div>
-
-
-            <!-- DUPLICATO per effetto scroll continuo -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">HTML</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Struttura semantica</li>
-                <li>SEO e accessibilità</li>
-              </ul>
-            </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">CSS</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Responsive design</li>
-                <li>Animazioni con Tailwind</li>
-              </ul>
-            </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-blue-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-blue-500 mb-2 uppercase tracking-wide">Web Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">JavaScript</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>DOM manipulation</li>
-                <li>Gestione eventi & API</li>
-              </ul>
-            </div>
-
-            <!-- === AI & Generative === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">ComfyUI</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Workflow visuali per generazione immagini</li>
-                <li>Ottimizzazione prompt e nodi</li>
-              </ul>
-            </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-purple-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-purple-600 mb-2 uppercase tracking-wide">AI & Generative</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">AI Generativa</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Prompting efficace (immagini e testo)</li>
-                <li>Uso creativo di modelli open-source</li>
-              </ul>
-            </div>
-
-            <!-- === Back-End / Data === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">Python</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Automazioni e script</li>
-                <li>Librerie scientifiche</li>
-              </ul>
-            </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">SQL</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Query, JOIN e normalizzazione</li>
-                <li>Modellazione dati</li>
-              </ul>
-            </div>
-
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-green-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-green-600 mb-2 uppercase tracking-wide">Back-End / Data</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">C#</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Applicazioni desktop</li>
-                <li>Esperienza con Unity</li>
-              </ul>
-            </div>
-
-            <!-- === Game Development === -->
-            <div
-              class="flex-shrink-0 bg-white rounded-2xl shadow-lg border border-red-100 w-72 p-10 hover:shadow-xl transition flex flex-col">
-              <span class="text-xs font-semibold text-red-500 mb-2 uppercase tracking-wide">Game Development</span>
-              <h4 class="text-xl font-semibold mb-4 text-gray-800">Blueprint (Unreal)</h4>
-              <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
-                <li>Logica visuale per gameplay</li>
-                <li>Trigger, eventi e animazioni 3D</li>
-              </ul>
-            </div>
-            <!-- FINE CARD BLOCK -->
 
           </div>
         </div>
@@ -360,35 +310,78 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="py-28 px-6 bg-white">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h3 class="text-3xl font-bold mb-12 text-center">Esperienza Lavorativa</h3>
+      
+      <div class="relative border-l-4 border-blue-100 ml-3 md:ml-6 space-y-12">
+        
+        <!-- Studio Vega -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-blue-600 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">Software Developer Intern</h4>
+          <p class="text-sm text-blue-600 font-semibold mb-3">Studio Vega | Gennaio 2025 – In corso</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed">
+            <li><strong>AI Agent Testing:</strong> Analisi comparativa di framework (Playwright, AskUI) e sviluppo di un tool custom in C# per l'automazione del collaudo del gestionale sanitario "Atlante".</li>
+            <li><strong>UX per il Testing:</strong> Progettazione di un'interfaccia per il monitoraggio dei log e la generazione di reportistica, semplificando il lavoro dell'Help Desk.</li>
+            <li><strong>AI & Automation:</strong> Implementazione di workflow su n8n e test di nuove funzionalità su architetture RAG aziendali.</li>
+          </ul>
+        </div>
+
+        <!-- BigRock -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-blue-400 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">AI & Emerging Tech Research Assistant</h4>
+          <p class="text-sm text-blue-500 font-semibold mb-3">BigRock School | Settembre 2024 – Febbraio 2025</p>
+          <ul class="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed">
+            <li><strong>R&D AI:</strong> Sviluppo di chatbot con LLM in locale e configurazione di workflow per l'automazione di processi creativi.</li>
+            <li><strong>Generative Pipeline:</strong> Produzione di contenuti multimediali complessi tramite pipeline text-to-video (Stable Diffusion, ComfyUI).</li>
+          </ul>
+        </div>
+
+        <!-- Spagnol Mobili -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-gray-300 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">Assistente Amministrativo</h4>
+          <p class="text-sm text-gray-500 font-semibold mb-3">Spagnol Mobili s.r.l. | 2023</p>
+          <p class="text-gray-700 leading-relaxed">Gestione dati e ottimizzazione di processi interni tramite l'uso avanzato di Excel e software gestionali, maturando precisione e visione d'insieme dei flussi aziendali.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Education Section -->
   <section id="education" class="py-28 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto fade-in">
+    <div class="max-w-4xl mx-auto fade-in">
       <h3 class="text-3xl font-bold mb-12 text-center">Formazione</h3>
-      <div class="space-y-8">
-        <div class="bg-white rounded-2xl shadow-lg p-8">
-          <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Scuola Superiore</h4>
-          <p class="text-gray-700 text-center">
-            Presso l’Istituto Tecnico “Marco Fanno” di Conegliano ho conseguito il diploma in Servizi Informativi
-            Aziendali, un percorso che mi ha permesso di sviluppare competenze solide in informatica, economia aziendale
-            e gestione dei sistemi informativi.
-            Questa formazione ha rappresentato una base concreta per avvicinarmi al mondo della programmazione e della
-            tecnologia, alimentando la mia passione per le soluzioni digitali e l’innovazione.
-          </p>
+      <div class="relative border-l-4 border-blue-100 ml-3 md:ml-6 space-y-12">
+        
+        <!-- Corsi Online -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-green-500 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">Certificazioni e Corsi Online</h4>
+          <p class="text-sm text-green-600 font-semibold mb-3">Autoformazione Continua</p>
+          <p class="text-gray-700 leading-relaxed">Lo sviluppo software richiede un aggiornamento costante. Dedico parte del mio tempo all'autoformazione esplorando documentazioni ufficiali, documentari tecnici e piattaforme per approfondire framework moderni, architetture ad agenti e nuove best practice nel mondo dell'Intelligenza Artificiale.</p>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8">
-          <h4 class="text-xl font-semibold mb-4 text-blue-600 text-center">Master in Coding</h4>
-          <p class="text-gray-700 text-center">
-            Presso BigRock ho frequentato il Master in Coding, un percorso intensivo focalizzato sullo sviluppo di
-            software, videogiochi e applicazioni interattive.
-            Durante il corso ho lavorando con tecnologie come Unity, Unreal Engine, VR, Deep Learning e intelligenza
-            artificiale generativa.
-            Ho acquisito esperienza pratica nella creazione di applicazioni, chatbot intelligenti e soluzioni basate
-            sull’intelligenza artificiale.
-            Questa esperienza immersiva mi ha permesso di trasformare le competenze tecniche in progetti concreti,
-            lavorando in team e affrontando sfide in modo professionale.
-          </p>
+
+        <!-- Master in Coding -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-blue-600 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">Master in Coding</h4>
+          <p class="text-sm text-blue-600 font-semibold mb-3">BigRock</p>
+          <p class="text-gray-700 leading-relaxed">Un percorso intensivo focalizzato sullo sviluppo di software, videogiochi e applicazioni interattive. Durante il corso ho lavorato con tecnologie come Unity, Unreal Engine, VR, Deep Learning e intelligenza artificiale generativa. Ho acquisito esperienza pratica nella creazione di applicazioni, chatbot intelligenti e soluzioni basate sull’intelligenza artificiale. Questa esperienza immersiva mi ha permesso di trasformare le competenze tecniche in progetti concreti, lavorando in team e affrontando sfide in modo professionale.</p>
         </div>
+
+        <!-- Scuola Superiore -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute w-6 h-6 bg-gray-300 rounded-full -left-[14px] top-1 border-4 border-white shadow"></div>
+          <h4 class="text-xl font-bold text-gray-800">Diploma in Servizi Informativi Aziendali</h4>
+          <p class="text-sm text-gray-500 font-semibold mb-3">Istituto Tecnico "Marco Fanno" di Conegliano</p>
+          <p class="text-gray-700 leading-relaxed">Un percorso che mi ha permesso di sviluppare competenze solide in informatica, economia aziendale e gestione dei sistemi informativi. Questa formazione ha rappresentato una base concreta per avvicinarmi al mondo della programmazione e della tecnologia, alimentando la mia passione per le soluzioni digitali e l’innovazione.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -401,13 +394,13 @@
       <a href="contatti.html"
         class="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">Scrivimi</a>
       <div class="mt-8 flex justify-center gap-2">
-        <a href="https://www.linkedin.com/in/ana-hysenaj" target="_blank" class="text-black hover:text-gray-700">
+        <a href="https://www.linkedin.com/in/ana-hysenaj" target="_blank" class="text-black hover:text-gray-700" aria-label="Visita il mio profilo LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 0-2.155 1.459-2.155 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.759 1.379-1.559 2.841-1.559 3.037 0 3.6 2 3.6 4.604v5.588z" />
           </svg>
         </a>
-        <a href="https://www.instagram.com/anaahysenaj/" target="_blank" class="text-black hover:text-gray-700">
+        <a href="https://www.instagram.com/anaahysenaj/" target="_blank" class="text-black hover:text-gray-700" aria-label="Visita il mio profilo Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="40 40 444 444" fill="currentColor">
             <path
               d="M349.33 69.33H162.67C110.8 69.33 69.33 110.8 69.33 162.67v186.66c0 51.87 41.47 93.34 93.34 93.34h186.66c51.87 0 93.34-41.47 93.34-93.34V162.67c0-51.87-41.47-93.34-93.34-93.34zM464 349.33c0 63.47-51.2 114.67-114.67 114.67H162.67C99.2 464 48 412.8 48 349.33V162.67C48 99.2 99.2 48 162.67 48h186.66C412.8 48 464 99.2 464 162.67v186.66z" />
@@ -423,7 +416,7 @@
 
   <!-- Footer -->
   <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
-    &copy; 2025 Ana Hysenaj. Tutti i diritti riservati.
+    &copy; 2026 Ana Hysenaj. Tutti i diritti riservati.
   </footer>
 
   <!-- Popup Modal -->
@@ -436,6 +429,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Pulsante Torna Su -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 hover:bg-blue-700 z-50" aria-label="Torna in cima alla pagina">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
 </body>
 
 </html>
